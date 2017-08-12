@@ -16,7 +16,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/aosp/common.mk)
+$(call inherit-product, vendor/aosp/config/common.mk)
 
 # Inherit from wt88047 device
 $(call inherit-product, device/wingtech/wt88047/device.mk)
@@ -28,8 +28,13 @@ TARGET_BOARD_PLATFORM_VARIANT := msm8916
 BOARD_VENDOR := wingtech
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := wt88047
-PRODUCT_NAME := aosp_wt88047
+PRODUCT_NAME := jdc_wt88047
 PRODUCT_MANUFACTURER := Wingtech
 PRODUCT_MODEL := Redmi 2
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+# Build fingerprint
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BUILD_FINGERPRINT="Xiaomi/wt88047/wt88047:5.1.1/LMY47V/V8.1.3.0.LHJMIDL:user/release-keys" \
+PRIVATE_BUILD_DESC="wt88047-user 5.1.1 LMY47V V8.1.3.0.LHJMIDL release-keys"
